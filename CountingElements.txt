@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int countElements(vector<int>& arr) {
+        
+        sort(arr.begin(),arr.end());
+    
+            int count = 0 ;
+        int nod=1;
+       for(int i = 0 ; i < arr.size()-1; i++)
+        {
+           
+            if(arr[i]==arr[i+1])
+            {
+         
+                 nod++;           
+            }
+          else
+          {
+            int next = arr[i]+1;
+            if(arr[i+1]==next)
+            {
+                count= count + nod;
+            }
+              nod = 1;
+        }
+      }
+        return count;
+        
+    }
+};

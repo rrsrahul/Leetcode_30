@@ -1,0 +1,38 @@
+class Solution {
+public:
+    string calc(string s)
+    {
+        
+        string res;
+        for(int i  = 0 ; i < s.size() ; i ++)
+        {
+            if(s[i]=='#')
+            {
+                res = res.substr(0,res.size()-1);    
+            }
+           
+            else
+            {
+                res = res + s[i];
+            }
+            
+            
+            
+        }
+        return res;
+    }
+    bool backspaceCompare(string S, string T) {
+        
+        S = calc(S);
+        T = calc(T);
+        if(S==T)
+        {
+            return true;
+        }
+        else
+        {
+return false;
+        }
+        
+    }
+};

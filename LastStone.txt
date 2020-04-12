@@ -1,0 +1,49 @@
+class Solution {
+public:
+   
+    void max(vector<int>& stones)
+    {
+       sort(stones.rbegin(),stones.rend());
+        
+        int m1 = stones[0];
+        int m2 = stones[1];
+        
+        if(m1==1 && m2 ==1)
+        {
+            stones.erase(stones.begin());
+            stones.erase(stones.begin());
+        }
+        else if(m1==m2)
+        {
+            stones.erase(stones.begin());
+            stones.erase(stones.begin());
+        }
+        else
+        {
+             
+      stones[0] = m1-m2; 
+      stones.erase(stones.begin()+1);
+        }
+       
+        
+    }
+    int lastStoneWeight(vector<int>& stones) {
+        
+       while(stones.size()>1)
+       {
+           max(stones);
+           for(auto it: stones)
+           {
+               cout<<it<<endl;
+           }
+       }
+        
+       // max(stones);
+        if(stones.empty())
+        {
+            return 0;
+        }
+        return stones[0];
+       
+    }
+};
