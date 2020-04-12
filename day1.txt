@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        
+      
+        map<int,int> hm;
+        hm[nums[0]]=1;
+        for(int i = 1 ; i< nums.size();i++)
+        {
+            if(hm.find(nums[i])== hm.end())
+            {
+                hm[nums[i]]=1;
+            }
+            else
+            {
+                hm.erase(nums[i]);
+            }
+            
+            
+            
+            }
+        auto m = hm.begin();
+        return m->first;
+    }
+};
